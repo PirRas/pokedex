@@ -27,33 +27,42 @@ pokemonCards.classList.add("container");
 document.body.appendChild(pokemonCards);
 
 let detailSection = document.createElement("div");
-detailSection.id = "pokemon-detail-view)"
+detailSection.id = "pokemon-detail-view"
 detailSection.classList.add("container", "d-none");
 
 // Funktionen
 function displaySinglePokemon(pokemon) {
-  pokemonCards.classList.add("d-none");
-  detailSection.classList.remove("d-none");
+  pokemonCards.classList.toggle("d-none");
+  detailSection.classList.toggle("d-none");
+
+  const card = createPokemonCard(pokemon)
+  detailSection.appendChild(card);
+}
+
+function createPokemonCard(pokemon) {
+  const card = document.createElement("div");
+  card.classList.add("card");
+
+  const cardTitle = document.createElement("h2");
+  cardTitle.textContent = pokemon.name;
+
+  const image = document.createElement("img");
+  image.src = pokemon.image;
+  image.alt = pokemon.name;
+
+  const type = document.createElement("p");
+  type.textContent = "Typ: " + pokemon.type;
+
+  card.appendChild(cardTitle);
+  card.appendChild(image);
+  card.appendChild(type);
+
+  return card;
 }
 
 for (const pokemon of pokemons){
     
-    const card = document.createElement("div");
-    card.classList.add("card");
-
-    const cardTitle = document.createElement("h2");
-    cardTitle.textContent = pokemon.name;
-
-    const image = document.createElement("img");
-    image.src = pokemon.image;
-    image.alt = pokemon.name;
-
-    const type = document.createElement("p");
-    type.textContent = "Typ: " + pokemon.type;
-
-    card.appendChild(cardTitle);
-    card.appendChild(image);
-    card.appendChild(type);
+    const card = createPokemonCard(pokemon)
 
     card.addEventListener("click", function() {
         displaySinglePokemon(pokemon);
