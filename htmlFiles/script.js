@@ -28,12 +28,12 @@ document.body.appendChild(pokemonCards);
 
 let detailSection = document.createElement("div");
 detailSection.id = "pokemon-detail-view"
-detailSection.classList.add("container", "d-none");
+detailSection.classList.add("container", "hidden");
 
 // Funktionen
 function displaySinglePokemon(pokemon) {
-  pokemonCards.classList.toggle("d-none");
-  detailSection.classList.toggle("d-none");
+  pokemonCards.classList.toggle("hidden");
+  detailSection.classList.toggle("hidden");
 
   const card = createPokemonCard(pokemon)
   detailSection.appendChild(card);
