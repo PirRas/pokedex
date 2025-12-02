@@ -26,6 +26,16 @@ pokemonCards.id = "pokemon-cards";
 pokemonCards.classList.add("container");
 document.body.appendChild(pokemonCards);
 
+let detailSection = document.createElement("div");
+detailSection.id = "pokemon-detail-view)"
+detailSection.classList.add("container", "d-none");
+
+// Funktionen
+function displaySinglePokemon(pokemon) {
+  pokemonCards.classList.add("d-none");
+  detailSection.classList.remove("d-none");
+}
+
 for (const pokemon of pokemons){
     
     const card = document.createElement("div");
@@ -46,9 +56,9 @@ for (const pokemon of pokemons){
     card.appendChild(type);
 
     card.addEventListener("click", function() {
-      console.log("Das Pokemon " + pokemon.name + " wurde geklickt");
+        displaySinglePokemon(pokemon);
     });
-    
     pokemonCards.appendChild(card);
 }
 
+document.body.appendChild(detailSection);
