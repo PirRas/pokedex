@@ -71,7 +71,9 @@ for (const pokemon of pokemons){
 }
 
 title.addEventListener("click", function() {
-  console.log("Title clicked");
+    pokemonCards.classList.remove("hidden");
+    detailSection.classList.add("hidden");
+    detailSection.innerHTML = "";
 });
 
 document.body.appendChild(detailSection);
