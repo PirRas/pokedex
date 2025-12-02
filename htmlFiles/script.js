@@ -71,6 +71,7 @@ for (const pokemon of pokemons){
 }
 
 title.addEventListener("click", function() {
+  console.log("Title clicked");
 });
 
 document.body.appendChild(detailSection);
