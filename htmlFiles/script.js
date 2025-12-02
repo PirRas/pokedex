@@ -70,4 +70,7 @@ for (const pokemon of pokemons){
     pokemonCards.appendChild(card);
 }
 
+title.addEventListener("click", function() {
+});
+
 document.body.appendChild(detailSection);
