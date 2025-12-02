@@ -43,6 +43,17 @@ body {
     text-transform: uppercase;
 }
 
+/* Hidden state styles */
+#pokemon-cards.hidden, #pokemon-detail-view.hidden {
+    opacity: 0;
+    max-height: 0;
+    pointer-events: none;
+}
+
+#title:hover {
+    cursor: pointer;
+}
+
 .card {
     background-color: rgba(253,253,253,0.90);
     border-radius: 5px;
@@ -68,10 +79,4 @@ body {
     justify-content: center;
     max-width: 1200px;
     margin: 0 auto;
-}
-/* Hidden state styles */
-#pokemon-cards.hidden, #pokemon-detail-view.hidden {
-    opacity: 0;
-    max-height: 0;
-    pointer-events: none;
 }
